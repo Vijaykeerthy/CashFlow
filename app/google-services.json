@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "296327884430",
+    "firebase_url": "https://cashflow-a2fce-default-rtdb.firebaseio.com",
+    "project_id": "cashflow-a2fce",
+    "storage_bucket": "cashflow-a2fce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:296327884430:android:124b5e1d9e1e0b000863df",
+        "android_client_info": {
+          "package_name": "com.example.madfinal"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbnigFYP7rTTw8TNMIMnAwsymtwleT1B8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

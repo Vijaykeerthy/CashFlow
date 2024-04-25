@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+     <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardLayout"
+            android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardLayout"
+            android:orientation="vertical">
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabs"
+                style="@style/CustomTab"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:tabIndicatorColor="#FF7D00"
+                app:tabIndicatorHeight="2dp"
+                app:tabMode="fixed"
+                app:tabSelectedTextColor="@color/black"
+                app:tabTextColor="#A6AAB4">
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/home_vertcalBar_Charts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="vertical" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/home_horizontalBar_Charts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Horizondal" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/home_donut_Charts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Donut" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/home_line_Charts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="line" />
+
+
+            </com.google.android.material.tabs.TabLayout>
+        </LinearLayout>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/base"
+                app:cardCornerRadius="20dp"
+                android:id="@+id/verti_final"
+                android:visibility="visible"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+
+                    <TextView
+                        android:id="@+id/tvChartName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="32dp"
+                        android:text="Vertical Bar Chart"
+                        android:textColor="#ffffff"
+                        android:textStyle="bold"
+                        android:textSize="30dp"
+                        android:paddingTop="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/barChart" />
+
+
+                    <com.db.williamchart.view.BarChartView
+                        android:id="@+id/barChart"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        app:chart_axis="x"
+                        app:chart_barsColor="#fff"
+                        app:chart_barsRadius="4dp"
+                        app:chart_labelsColor="#FFFFFF"
+                        app:chart_labelsSize="10sp"
+                        app:chart_spacing="15dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/horiz_final"
+                android:visibility="visible"
+                app:cardBackgroundColor="@color/base"
+                app:cardCornerRadius="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/tvChartNamehrz"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="32dp"
+                        android:text="Horizontal Bar Chart"
+                        android:textColor="#ffffff"
+                        android:textStyle="bold"
+                        android:textSize="30dp"
+                        android:paddingTop="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/barChartHorizontal" />
+
+
+                    <com.db.williamchart.view.HorizontalBarChartView
+                        android:id="@+id/barChartHorizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        app:chart_axis="x"
+                        app:chart_barsColor="#fff"
+                        app:chart_barsRadius="4dp"
+                        app:chart_labelsColor="#FFFFFF"
+                        app:chart_labelsSize="10sp"
+                        app:chart_spacing="15dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.39"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="1.0" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/base"
+                android:id="@+id/donut_final"
+                android:visibility="visible"
+                app:cardCornerRadius="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tvChartName1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="32dp"
+                        android:textSize="30dp"
+                        android:text="Donut Chart"
+                        android:paddingTop="20dp"
+                        android:textColor="#ffffff"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@id/donutChart"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <com.db.williamchart.view.DonutChartView
+                        android:id="@+id/donutChart"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        app:chart_donutBackgroundColor="#6BED19"
+                        app:chart_donutRoundCorners="true"
+                        app:chart_donutThickness="15dp"
+                        app:chart_donutTotal="200"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/base"
+                android:id="@+id/line_final"
+                android:visibility="visible"
+                app:cardCornerRadius="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tvChartName3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="32dp"
+                        android:textSize="30dp"
+                        android:paddingTop="20dp"
+                        android:text="Line Chart"
+                        android:textStyle="bold"
+                        android:textColor="#ffffff"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/tvChartData" />
+
+                    <TextView
+                        android:id="@+id/tvChartData"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="16dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/lineChart" />
+
+                    <com.db.williamchart.view.LineChartView
+                        android:id="@+id/lineChart"
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        app:chart_axis="none"
+                        app:chart_gridEffect="dotted"
+                        app:chart_labelsColor="#FFFFFF"
+                        app:chart_labelsSize="10sp"
+                        app:chart_lineColor="#ffffff"
+                        app:chart_lineThickness="3dp"
+                        app:chart_smoothLine="true"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+</ScrollView>
+
+</layout>
